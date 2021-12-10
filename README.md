@@ -14,48 +14,66 @@ theme: skeleton
 carlae_dir: carlae_page
 ---
 
-# pyremark
+# pyremark_slides
 **a python package for converting markdown to remark.js slides**
 
-a sister project of pyreveal
+a sister project of <a href="https://github.com/wcchin/pyreveal" target="_blank">pyreveal</a>.
 
-<!--
-## a demo
-[![pyreveal demo video](http://wcchin.github.io/images/pyrev_demo_vimeo.png)](https://vimeo.com/226295024)
--->
+This project is done to put the markdown content to a base template file which is styled using jinja2, and also use the yaml header to do the config for each file. 
+
+In other words, the purpose of this project focused on separating the heavy html/css configs from the markdown content, and keep only a minimal config setup using the yaml way on top of the markdown file. 
+
+Please try.
 
 
 ## Install
 
-```sh
+    git clone https://github.com/wcchin/pyremark_slides.git
+    cd pyremark_slides
+    pip install -e .
 
-git clone https://github.com/wcchin/pyremark_slides.git
-cd pyremark_slides
-pip install -e .
-
-```
 
 ## Using
 
-1. cd your_slides_dir
-2. create a file named whatever.md (with .md extension)
-3. follow the instruction in the following sections and write the slides content inside the whatever.md
-4. run the command, see the following "usage" section
-5. if the '-w' is used in the command, the slides will change according to the modification of the whatever.md file (and custom.css).
-6. done
+    cd slides_dir
+    pyremark -i a_file.md -w
 
-# Documentation
+a file name `a_file.slides.html` will be generated, open it with a browser.
 
-## slides configuration
 
-pyreveal will read the first several lines of the whatever.md file and get the metadata as the configs, using the <a href="https://github.com/waylan/docdata" target="blank">**docdata**</a> package .
+## The markdown file template
 
-```markdown
 
-slide_title: testing remarkjs
-custom_css: custom.css
-remarkjs_path: remarkjs/remark-0.15.0.js
+    slide_title: testing remarkjs
+    custom_css: custom.css
+    remarkjs_path: remarkjs/remark-0.15.0.js
 
-```
+    # Some title
 
-Please try.
+    ---
+
+    second page
+
+
+Note:
+
+- custom_css: this will be used to style the remark.js slides. 
+- remarkjs_path: this is the local path for offline presentation, default to the online latest remark-latest.js file provided by the original repos. 
+- slide_title: this is the title to be shown on the header of the presentation. 
+
+
+custom.css file default to this:
+
+    @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+    @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+    @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+    body { font-family: 'Droid Serif'; }
+    h1, h2, h3 {
+      font-family: 'Yanone Kaffeesatz';
+      font-weight: normal;
+    }
+    .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+
+

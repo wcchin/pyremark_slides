@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="UTF-8">
+  <title>pyremark, a python package for converting markdown to remark.js slides</title>
+  <meta name="description" content="">
+  <meta name="author" content="wcchin">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="css/css.css" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <!--<link rel="stylesheet" href="css/typicons/typicons.min.css">-->
+  <!--<link rel="stylesheet" href="css/fontawesome/css/fontawesome.min.css">
+  <link rel="stylesheet" href="css/fontawesome/css/brands.min.css">
+  <link rel="stylesheet" href="css/fontawesome/css/solid.min.css">-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typicons.font@2.0.9/src/font/typicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/brands.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/solid.min.css">
+
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/javascript" async="" src="js/ga.js"></script><script id="twitter-wjs" src="js/widgets.js"></script><script src="js/jquery.js"></script>
+  <!--<script src="js/run_prettify.html"></script>-->
+  <link rel="stylesheet" href="css/github-prettify-theme.css">
+  <script src="js/site.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="http://getskeleton.com/dist/images/favicon.png">
+
+<script charset="utf-8" src="js/button.js"></script></head>
+<body class="code-snippets-visible">
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="header">
+      <h1 class="title"> pyremark_slides </h1>
+      <h2 class="title"> a markdown to remark.js engine </h2>
+      
+      <a class="button button-primary" href="https://github.com/wcchin/pyremark_slides" style="background-color:#33C3F0;" > go to project page </a>
+      
+      
+      <div class="value-props row">
+		
+        <div class="four columns value-prop">
+		  <h1 style="color:#33C3F0;"><span class="typcn typcn-lightbulb"></span></h1>
+          get some idea
+        </div>
+        
+        <div class="four columns value-prop">
+		  <h1 style="color:#33C3F0;"><i class="fab fa-markdown"></i></h1>
+          write with markdown
+        </div>
+        
+        <div class="four columns value-prop">
+		  <h1 style="color:#33C3F0;"><i class="fas fa-chart-area"></i></h1>
+          and present it
+        </div>
+        
+      </div>
+      
+    </section>
+
+	
+    <div class="navbar-spacer"></div>
+    <nav class="navbar">
+      <div class="container">
+        <ul class="navbar-list">
+          <!--<li class="navbar-item"><a class="navbar-link" href="#"><large>pyremark_slides</large></a></li>-->
+		  
+          <li class="navbar-item">
+            <a class="navbar-link" href="#" data-popover="#codeNavPopoverpyremark_slides">pyremark_slides</a>
+            <div id="codeNavPopoverpyremark_slides" class="popover">
+              <ul class="popover-list">
+                <li class="popover-item">
+                  <a class="popover-link" href="#pyremark_slides">pyremark_slides</a>
+                </li>
+                
+                <li class="popover-item">
+                  <a class="popover-link" href="#install">Install</a>
+                </li>
+                
+                <li class="popover-item">
+                  <a class="popover-link" href="#using">Using</a>
+                </li>
+                
+                <li class="popover-item">
+                  <a class="popover-link" href="#themarkdownfiletemplate">The markdown file template</a>
+                </li>
+                
+              </ul>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+    </nav>
+    
+
+    <!-- main text area -->
+    <div class="docs-section" id="intro">
+	  <h1 id="pyremark_slides">pyremark_slides</h1>
+
+<p><strong>a python package for converting markdown to remark.js slides</strong></p>
+<p>a sister project of <a href="https://github.com/wcchin/pyreveal" target="_blank">pyreveal</a>.</p>
+<p>This project is done to put the markdown content to a base template file which is styled using jinja2, and also use the yaml header to do the config for each file. </p>
+<p>In other words, the purpose of this project focused on separating the heavy html/css configs from the markdown content, and keep only a minimal config setup using the yaml way on top of the markdown file. </p>
+<p>Please try.</p>
+<h2 id="install">Install</h2>
+
+<pre><code>git clone https://github.com/wcchin/pyremark_slides.git
+cd pyremark_slides
+pip install -e .
+</code></pre>
+<h2 id="using">Using</h2>
+
+<pre><code>cd slides_dir
+pyremark -i a_file.md -w
+</code></pre>
+<p>a file name <code>a_file.slides.html</code> will be generated, open it with a browser.</p>
+<h2 id="themarkdownfiletemplate">The markdown file template</h2>
+
+<pre><code>slide_title: testing remarkjs
+custom_css: custom.css
+remarkjs_path: remarkjs/remark-0.15.0.js
+
+# Some title
+
+---
+
+second page
+</code></pre>
+<p>Note:</p>
+<ul>
+<li>custom_css: this will be used to style the remark.js slides. </li>
+<li>remarkjs_path: this is the local path for offline presentation, default to the online latest remark-latest.js file provided by the original repos. </li>
+<li>slide_title: this is the title to be shown on the header of the presentation. </li>
+</ul>
+<p>custom.css file default to this:</p>
+<pre><code>@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+body { font-family: 'Droid Serif'; }
+h1, h2, h3 {
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: normal;
+}
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+</code></pre>
+    </div>
+  </div>
+
+  
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body></html>
