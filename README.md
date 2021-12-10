@@ -1,18 +1,3 @@
----
-top_title: pyremark, a python package for converting markdown to remark.js slides
-project_name: pyremark_slides
-smart_title: a markdown to remark.js engine
-author: wcchin
-short_description: a python package for converting markdown to remark.js slides
-keywords: [remark.js, markdown, python]
-three_concepts: [':typcn-lightbulb:', ':fab-markdown:', ':fas-chart-area:']
-three_desc: [get some idea, write with markdown, and present it]
-concept_color: '#33C3F0'
-project_url: https://github.com/wcchin/pyremark_slides
-project_url_title: go to project page
-theme: skeleton
-carlae_dir: carlae_page
----
 
 # pyremark_slides
 **a python package for converting markdown to remark.js slides**
