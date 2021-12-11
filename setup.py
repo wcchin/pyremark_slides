@@ -37,10 +37,9 @@ setup(
 
     install_requires=[
         "jinja2",
-        "markdown",
         "watchdog",
     ],
-    entry_points = {
+    entry_points={
         "console_scripts": ['pyremark = pyremark.pyremark:main']
         },
 )

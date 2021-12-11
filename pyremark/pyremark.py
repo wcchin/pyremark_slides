@@ -2,17 +2,16 @@
 
 import os
 import time
-import copy
-import re
+# import copy
+# import re
 from shutil import copyfile
 from optparse import OptionParser
-
-import markdown
+# import markdown
 import jinja2
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 
-from pyremark.docdata.mmddata import get_data # borrow first
+from pyremark.docdata.mmddata import get_data
 
 
 class MyHandler(FileSystemEventHandler):
@@ -23,24 +22,26 @@ class MyHandler(FileSystemEventHandler):
         slides(self.infile)
         print("updated slides")
 
+
 def main():
     parser = OptionParser()
     parser.add_option("-i", "--input",
-        dest="filename",
-        help="markdown file holding your slides and configs",
-        default='slides.md',
-        metavar="SLIDES.md")
-    parser.add_option("-w", "--watch", action="store_true", dest="watch", default=False)
+                      dest="filename",
+                      help="markdown file holding your slides and configs",
+                      default='slides.md',
+                      metavar="SLIDES.md")
+    parser.add_option("-w", "--watch", action="store_true", dest="watch",
+                      default=False)
 
     (options, args) = parser.parse_args()
 
     print('processing: '+options.filename)
-    #try:
+    # try:
     S = slides(options.filename)
     htmlfile = S.outputPath
     print('done writing to html: '+htmlfile)
-    #pdffile = S.pdffile
-    #if S.to_pdf:
+    # pdffile = S.pdffile
+    # if S.to_pdf:
     #    export_topdf(htmlfile, pdffile)
 
     if options.watch:
@@ -48,7 +49,7 @@ def main():
         print("to stop watching, press ctrl+c")
         observer = Observer()
         event_handler = MyHandler(options.filename)
-        path =  os.path.dirname(os.path.abspath(options.filename))
+        path = os.path.dirname(os.path.abspath(options.filename))
         observer.schedule(event_handler, path, recursive=True)
         observer.start()
         try:
@@ -59,9 +60,7 @@ def main():
         observer.join()
         print("")
         print("watching stop")
-    #print "checking"
-    #if S.to_pdf:
-    #    export_topdf(htmlfile, pdffile)
+
 
 def check_mkdir(outpath):
     directory = os.path.dirname(outpath)
@@ -69,21 +68,24 @@ def check_mkdir(outpath):
         print('creating dir: '+directory)
         os.makedirs(directory)
 
+
 def text_export(outputText, outputPath):
     check_mkdir(outputPath)
-    #print 'writing file to:', outputPath
+    # print 'writing file to:', outputPath
     f = open(outputPath, 'w')
-    f.write(outputText)#.encode("utf-8"))
+    f.write(outputText)  # .encode("utf-8"))
     f.close()
+
 
 def copy_directories(static_path_in, static_path_out):
     for dirName, subdirList, fileList in os.walk(static_path_in):
         for fname in fileList:
-            inf = os.path.join(dirName,fname)
+            inf = os.path.join(dirName, fname)
             relf = os.path.relpath(inf, static_path_in)
             outf = os.path.join(static_path_out, relf)
             check_mkdir(outf)
             copyfile(inf, outf)
+
 
 class slides():
     def __init__(self, afile):
@@ -98,19 +100,18 @@ class slides():
             output_dir = config['output_dir']
             del config['output_dir']
 
-        output_fname = '{}.slides.html'.format(base_name.replace('.md',''))
+        output_fname = '{}.slides.html'.format(base_name.replace('.md', ''))
         if 'output_filename' in config:
             output_fname = config['output_filename']
             del config['output_filename']
 
         if 'remarkjs_path' in config:
             remjs_path = config['remarkjs_path']
-            #del config['remarkjs_path']
         else:
             remjs_path = None
             config['remarkjs_path'] = None
 
-        if not 'custom_css' in config:
+        if 'custom_css' not in config:
             config['custom_css'] = None
 
         maindic = {}
@@ -130,26 +131,27 @@ class slides():
             # use online latest remark.js file as written in template file
             # "https://remarkjs.com/downloads/remark-latest.min.js"
             pass
-        elif (not(remjs_path[:4]=='http')):
+        elif (not(remjs_path[:4] == 'http')):
             remjs_path_dir = os.path.dirname(remjs_path)
-            remjs_dir_fullpath = os.path.abspath(os.path.join(base_dir, remjs_path_dir))
-            #print(remjs_dir_fullpath)
+            remjs_dir_fullpath = os.path.abspath(os.path.join(base_dir,
+                                                 remjs_path_dir))
+            # print(remjs_dir_fullpath)
             if not os.path.exists(remjs_dir_fullpath):
-                src = os.path.join(pyrem_path,'remarkjs')
+                src = os.path.join(pyrem_path, 'remarkjs')
                 copy_directories(src, remjs_dir_fullpath)
 
-        template_path = os.path.join(pyrem_path,'templates')
+        template_path = os.path.join(pyrem_path, 'templates')
         templateLoader = jinja2.FileSystemLoader(searchpath=template_path)
         templateEnv = jinja2.Environment(loader=templateLoader)
         TEMPLATE_FILE = "base.html"
         template = templateEnv.get_template(TEMPLATE_FILE)
         outputText = template.render(maindic)
-        #print outputText
+        # print(outputText)
 
         outputPath = os.path.join(base_dir, output_dir, output_fname)
         self.outputPath = outputPath
-        #self.pdffile = outputPath.replace('.html','.pdf')
-        #if not pdf_filename is None:
+        # self.pdffile = outputPath.replace('.html','.pdf')
+        # if not pdf_filename is None:
         #    self.pdffile = pdf_filename
 
         text_export(outputText, outputPath)
@@ -159,9 +161,10 @@ class slides():
             doc = f.read()
         doc, config = get_data(doc)
         config2 = {}
-        for k,v in config.items():
+        for k, v in config.items():
             config2[k] = ' '.join(v)
         return doc, config2
+
 
 if __name__ == '__main__':
     afile = 'testing/test.md'
