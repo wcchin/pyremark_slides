@@ -14,6 +14,44 @@ from watchdog.observers import Observer
 from pyremark.docdata.mmddata import get_data
 
 
+
+
+
+def process_a_file(filepath):
+    print('processing: '+filepath)
+    #try:
+    S = slides(filepath)
+    htmlfile = S.outputPath
+    print('done writing to html: '+htmlfile)
+    #pdffile = S.pdffile
+    #if S.to_pdf:
+    #    export_topdf(htmlfile, pdffile)
+
+
+class MyHandler2(FileSystemEventHandler):
+    def on_modified(self, event):
+        filepath = event.src_path
+        if filepath[-3:].lower()==".md":
+            process_a_file(filepath)
+            print("updated slides")
+
+def start_watching_directory(adir):
+    print("start watching changes")
+    print("to stop watching, press ctrl+c")
+    observer = Observer()
+    event_handler = MyHandler2()
+    observer.schedule(event_handler, adir, recursive=True)
+    observer.start()
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        observer.stop()
+    observer.join()
+    print("")
+    print("watching stop")
+
+
 class MyHandler(FileSystemEventHandler):
     def __init__(self, infile):
         self.infile = infile
@@ -23,43 +61,85 @@ class MyHandler(FileSystemEventHandler):
         print("updated slides")
 
 
+def start_watching_a_file(filepath):
+    process_a_file(filepath)
+    print("start watching changes")
+    print("to stop watching, press ctrl+c")
+    observer = Observer()
+    event_handler = MyHandler(filepath)
+    path =  os.path.dirname(os.path.abspath(filepath))
+    observer.schedule(event_handler, path, recursive=True)
+    observer.start()
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        observer.stop()
+    observer.join()
+    print("")
+    print("watching stop")
+
+
+def gen_list_page(basedir, force):
+    outputPath = os.path.join(basedir, "index.html")
+    if os.path.exists(outputPath) and not(force):
+        print("index.html exists and no forcing option is provided")
+        print("NOT generating the index.html file")
+        return
+
+    pyrem_path = os.path.dirname(__file__)
+    fs = os.listdir(basedir)
+    slidelist = []
+    md_list = [ f for f in fs if f[-3:].lower()==".md" ]
+    html_list = [ f for f in fs if f[-12:].lower()==".slides.html" ]
+    for md in md_list:
+        ht = md[:-3]+".slides.html"
+        if ht in html_list:
+            slidelist.append({"mdpath": md, "htmlpath": ht})
+        else:
+            slidelist.append({"mdpath": md, "htmlpath": "not_generated"})
+    dic = {"slidelist": slidelist}
+
+    template_path = os.path.join(pyrem_path,'templates')
+    templateLoader = jinja2.FileSystemLoader(searchpath=template_path)
+    templateEnv = jinja2.Environment(loader=templateLoader)
+    TEMPLATE_FILE = "list.html"
+    template = templateEnv.get_template(TEMPLATE_FILE)
+    outputText = template.render(dic)
+    text_export(outputText, outputPath)
+    return
+
+
 def main():
     parser = OptionParser()
     parser.add_option("-i", "--input",
-                      dest="filename",
-                      help="markdown file holding your slides and configs",
-                      default='slides.md',
-                      metavar="SLIDES.md")
-    parser.add_option("-w", "--watch", action="store_true", dest="watch",
-                      default=False)
+        dest="filename",
+        help="markdown file holding your slides and configs",
+        metavar="SLIDES.md")
+    parser.add_option("-d", "--directory", dest="directory", default=None, help="watch the current directory")
+    parser.add_option("-w", "--watch", action="store_true", dest="watch", default=False, help="watch the file")
+    parser.add_option("-f", "--force", action="store_true", dest="force", default=False, help="overlap index file if exist")
 
     (options, args) = parser.parse_args()
 
-    print('processing: '+options.filename)
-    # try:
-    S = slides(options.filename)
-    htmlfile = S.outputPath
-    print('done writing to html: '+htmlfile)
-    # pdffile = S.pdffile
-    # if S.to_pdf:
-    #    export_topdf(htmlfile, pdffile)
+    if options.watch and options.filename:
+        start_watching_a_file(options.filename)
 
-    if options.watch:
-        print("start watching changes")
-        print("to stop watching, press ctrl+c")
-        observer = Observer()
-        event_handler = MyHandler(options.filename)
-        path = os.path.dirname(os.path.abspath(options.filename))
-        observer.schedule(event_handler, path, recursive=True)
-        observer.start()
-        try:
-            while True:
-                time.sleep(1)
-        except KeyboardInterrupt:
-            observer.stop()
-        observer.join()
-        print("")
-        print("watching stop")
+    elif options.filename:
+        process_a_file(options.filename)
+
+    elif options.directory:
+        print(options.directory)
+        gen_list_page(options.directory, options.force)
+        start_watching_directory(".")
+
+    else:
+        print("No file is provided and no option is selected")
+        print("Stop and close")
+
+    #print "checking"
+    #if S.to_pdf:
+    #    export_topdf(htmlfile, pdffile)
 
 
 def check_mkdir(outpath):
