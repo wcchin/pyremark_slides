@@ -12,6 +12,6 @@
 
     </textarea>
     {% if remarkjs_path is not none %}<script src="{{ remarkjs_path }}"  type="text/javascript"></script>{% else %}<script src="https://remarkjs.com/downloads/remark-latest.min.js"  type="text/javascript"></script>{% endif %}
-    <script>var slideshow = remark.create();</script>
+    <script>var slideshow = remark.create({% if not(aspect_ratio is none) %}{ ratio:"{{ aspect_ratio }}" }{% endif %});</script>
   </body>
 </html>
