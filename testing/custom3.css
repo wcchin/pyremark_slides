@@ -1,4 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Red+Hat+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Red+Hat+Mono:ital,wght@0,400;0,700;1,400&display=swap');*/
+
+@font-face{
+  font-family: 'Quicksand';
+  src: url('./remarkjs/fonts/Quicksand-VariableFont_wght.ttf');
+}
+
+@font-face{
+  font-family: 'Red Hat Mono';
+  src: url('./remarkjs/fonts/RedHatMono-VariableFont_wght.ttf');
+}
+
+@font-face{
+  font-family: 'Red Hat Mono';
+  src: url('./remarkjs/fonts/RedHatMono-Italic-VariableFont_wght.ttf');
+}
 
 /*=========================================
 2.1. San Francisco Font (Apple's new font)
@@ -7,25 +22,33 @@
 @font-face {
   font-family: 'San Francisco';
   font-weight: 100;
-  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff2"); }
+  src: url("./remarkjs/fonts/sanfranciscodisplay-ultralight-webfont.woff2"); 
+}
 
 /* Thin */
 @font-face {
   font-family: 'San Francisco';
   font-weight: 200;
-  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.woff2"); }
+  src: url("./remarkjs/fonts/sanfranciscodisplay-thin-webfont.woff2"); 
+}
 
 /* Regular */
 @font-face {
   font-family: 'San Francisco';
   font-weight: 400;
-  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff2"); }
+  src: url("./remarkjs/fonts/sanfranciscodisplay-regular-webfont.woff2"); 
+}
 
 /* Bold */
 @font-face {
   font-family: 'San Francisco';
   font-weight: bold;
-  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff2"); }
+  src: url("./remarkjs/fonts/sanfranciscodisplay-bold-webfont.woff2"); 
+}
+/*url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff2");*/ 
+/*url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.woff2");*/ 
+/*url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff2");*/ 
+/*url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff2");*/ 
 
 body {
   font-family: 'San Francisco';
@@ -46,7 +69,7 @@ h1, h2, h3 {
 li p { line-height: 1.25em; }
 .red { color: #fa0000; }
 .large { font-size: 2em; }
-.round { font-family: 'quicksand';}
+.round { font-family: 'Quicksand';}
 
 a, a > code {
   color: rgb(249, 38, 114);
