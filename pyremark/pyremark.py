@@ -7,12 +7,12 @@ import time
 from shutil import copyfile
 from optparse import OptionParser
 # import markdown
+# from markdown.extensions.toc import TocExtension
 import jinja2
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 
 from pyremark.docdata.mmddata import get_data
-
 
 
 
@@ -170,6 +170,8 @@ def copy_directories(static_path_in, static_path_out):
 class slides():
     def __init__(self, afile):
         doc, config = self.process_md(afile)
+        # html = markdown.markdown(doc, extensions=['toc'])
+        # print(html)
         content = doc
 
         base_dir = os.path.abspath(os.path.dirname(afile))
@@ -243,6 +245,11 @@ class slides():
         config2 = {}
         for k, v in config.items():
             config2[k] = ' '.join(v)
+        for line in doc.split('\n'):
+            if len(line)>0 and line[0] == '#':
+                print(line)
+            # print(line)
+
         return doc, config2
 
 
