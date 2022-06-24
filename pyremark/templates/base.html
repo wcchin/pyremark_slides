@@ -28,7 +28,7 @@
     <script>
       var options = {};{% if not(aspect_ratio is none) %}
       options['ratio'] = "{{ aspect_ratio }}"; {% endif %}
-      options['navigation'] = {scroll: true, touch: true, click: true};
+      options['navigation'] = {scroll: true, touch: true, click: false};
       var slideshow = remark.create(options);
     </script>
   </body>
