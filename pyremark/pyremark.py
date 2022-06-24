@@ -196,6 +196,27 @@ class slides():
         if 'custom_css' not in config:
             config['custom_css'] = None
 
+        if 'click_function' not in config:
+            config['click_function'] = 'false'
+        elif config['click_function'] not in ['true', 'false']:
+            config['click_function'] = 'false'
+
+        if 'use_mathjax' in config:
+            if config['use_mathjax']=='true':
+                config['use_mathjax'] = True
+            elif config['use_mathjax']=='false':
+                config['use_mathjax'] = False
+        else:
+            config['use_mathjax'] = False
+
+        if 'use_mermaid' in config:
+            if config['use_mermaid']=='true':
+                config['use_mermaid'] = True
+            elif config['use_mermaid']=='false':
+                config['use_mermaid'] = False
+        else:
+            config['use_mermaid'] = False
+
         maindic = {}
         maindic['content'] = content
         maindic.update(config)
