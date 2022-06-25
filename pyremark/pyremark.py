@@ -167,11 +167,19 @@ def copy_directories(static_path_in, static_path_out):
             copyfile(inf, outf)
 
 
+def prepare_toc(toc_list):
+    toc_str = ""
+    for p, line in toc_list:
+        toc_str += '<a href="#{}">{}-{}</a>'.format(p, p, line[1:])
+    return toc_str
+
+
 class slides():
     def __init__(self, afile):
-        doc, config = self.process_md(afile)
+        doc, config, toc = self.process_md(afile)
         # html = markdown.markdown(doc, extensions=['toc'])
         # print(html)
+        toc_str = prepare_toc(toc)
         content = doc
 
         base_dir = os.path.abspath(os.path.dirname(afile))
@@ -219,6 +227,7 @@ class slides():
 
         maindic = {}
         maindic['content'] = content
+        maindic['table_of_content'] = toc_str
         maindic.update(config)
 
         """
@@ -266,12 +275,17 @@ class slides():
         config2 = {}
         for k, v in config.items():
             config2[k] = ' '.join(v)
+        toc = []
+        p = 0  # first --- is to separate the header config
         for line in doc.split('\n'):
-            if len(line)>0 and line[0] == '#':
-                print(line)
+            if len(line) > 0 and line[0] == '#':
+                #print(p, line)
+                toc.append((p, line))
+            elif len(line.strip()) == 3 and line.strip() == "---":
+                p += 1
             # print(line)
 
-        return doc, config2
+        return doc, config2, toc
 
 
 if __name__ == '__main__':
