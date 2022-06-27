@@ -106,7 +106,7 @@
 .tab-content {
   height: 12rem;
   position: absolute;
-  z-index: 999;
+  z-index: 990;
   top: 2.75em;
   left: 0;
   background: #111;
@@ -115,12 +115,13 @@
   transition: all 0.35s;
 }
 .tab-switch:checked + .tab-label {
+  border-bottom: 0.125rem solid #818181;
   transition: all 0.35s;
-  z-index: 1;
+  z-index: 1000;
   top: -0.0625rem;
 }
 .tab-switch:checked + label + .tab-content {
-  z-index: 1000;
+  z-index: 999;
   opacity: 1;
   transition: all 0.35s;
 }
