@@ -12,7 +12,7 @@ function closeNav() {
 }
 
 window.addEventListener("keydown", function (event) {
-  if (event.key === 'Escape') {
+  if (event.key === 't') {
     if (document.getElementById("mySidenav").style.width === "300px") {
       closeNav();
     } else {
