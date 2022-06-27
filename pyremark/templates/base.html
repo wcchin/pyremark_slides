@@ -20,11 +20,12 @@
       <!-- <a href="#">About</a> -->
       {{ table_of_content }}
     </div>
+    <!--
     <div class="menu-toggle" id="menu-toggle" onclick="openNav(this)">
       <div class="bar1"></div>
       <div class="bar2"></div>
       <div class="bar3"></div>
-    </div>
+  </div>-->
     {% endif %}
     <textarea id="source">
 
@@ -39,7 +40,7 @@
     <script>
       var options = {};{% if not(aspect_ratio is none) %}
       options['ratio'] = "{{ aspect_ratio }}"; {% endif %}
-      options['navigation'] = {scroll: true, touch: true, click: {{ click_function }}};
+      options['navigation'] = {scroll: {{ use_scroll }}, touch: true, click: {{ use_click }}};
       var slideshow = remark.create(options);
     </script>
   </body>

@@ -168,9 +168,35 @@ def copy_directories(static_path_in, static_path_out):
 
 
 def prepare_toc(toc_list):
+    toc_row = 15
     toc_str = ""
-    for p, line in toc_list:
-        toc_str += '<a href="#{}">{}-{}</a>'.format(p, p, line[1:])
+    if len(toc_list) > toc_row:
+        toc_str += '<div class="tabs">'
+        tablist = []
+        temp_str = ""
+        counting = 0
+        for p, line in toc_list:
+            if counting >= toc_row:
+                tablist.append(temp_str)
+                temp_str = ""
+                counting = 0
+            temp_str += '<a href="#{}">{}-{}</a>'.format(p, p, line[1:])
+            counting += 1
+        if counting > 0:
+            tablist.append(temp_str)
+        for t, content in enumerate(tablist):
+            checked = 'checked' if t == 0 else ''
+            toc_str += '<div class="tab">'
+            toc_str += '<input type="radio" name="css-tabs" id="tab-{}" {} class="tab-switch">'.format(t, checked)
+            toc_str += '<label for="tab-{}" class="tab-label"> {} </label>'.format(t, t)
+            toc_str += '<div class="tab-content">'
+            toc_str += content
+            toc_str += '</div>'  # close tab-content
+            toc_str += '</div>'  # close this tab
+        toc_str += '</div>'  # close tabs
+    else:
+        for p, line in toc_list:
+            toc_str += '<a href="#{}">{}-{}</a>'.format(p, p, line[1:])
     return toc_str
 
 
@@ -204,10 +230,15 @@ class slides():
         if 'custom_css' not in config:
             config['custom_css'] = None
 
-        if 'click_function' not in config:
-            config['click_function'] = 'false'
-        elif config['click_function'] not in ['true', 'false']:
-            config['click_function'] = 'false'
+        if 'use_click' not in config:
+            config['use_click'] = 'false'
+        elif config['use_click'] not in ['true', 'false']:
+            config['use_click'] = 'false'
+
+        if 'use_scroll' not in config:
+            config['use_scroll'] = 'false'
+        elif config['use_scroll'] not in ['true', 'false']:
+            config['use_scroll'] = 'false'
 
         if 'use_mathjax' in config:
             if config['use_mathjax']=='true':
