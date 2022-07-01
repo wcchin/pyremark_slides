@@ -1,18 +1,25 @@
+@import url('base.css');
+
 /*@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Red+Hat+Mono:ital,wght@0,400;0,700;1,400&display=swap');*/
 
 @font-face{
   font-family: 'Quicksand';
-  src: url('./remarkjs/fonts/Quicksand-VariableFont_wght.ttf');
+  src: url('./fonts/Quicksand-VariableFont_wght.ttf');
+}
+
+@font-face{
+  font-family: 'xkcd';
+  src: url('./fonts/xkcd-script.woff');
 }
 
 @font-face{
   font-family: 'Red Hat Mono';
-  src: url('./remarkjs/fonts/RedHatMono-VariableFont_wght.ttf');
+  src: url('./fonts/RedHatMono-VariableFont_wght.ttf');
 }
 
 @font-face{
   font-family: 'Red Hat Mono';
-  src: url('./remarkjs/fonts/RedHatMono-Italic-VariableFont_wght.ttf');
+  src: url('./fonts/RedHatMono-Italic-VariableFont_wght.ttf');
 }
 
 /*=========================================
@@ -22,28 +29,28 @@
 @font-face {
   font-family: 'San Francisco';
   font-weight: 100;
-  src: url("./remarkjs/fonts/sanfranciscodisplay-ultralight-webfont.woff2"); 
+  src: url("./fonts/sanfranciscodisplay-ultralight-webfont.woff2"); 
 }
 
 /* Thin */
 @font-face {
   font-family: 'San Francisco';
   font-weight: 200;
-  src: url("./remarkjs/fonts/sanfranciscodisplay-thin-webfont.woff2"); 
+  src: url("./fonts/sanfranciscodisplay-thin-webfont.woff2"); 
 }
 
 /* Regular */
 @font-face {
   font-family: 'San Francisco';
   font-weight: 400;
-  src: url("./remarkjs/fonts/sanfranciscodisplay-regular-webfont.woff2"); 
+  src: url("./fonts/sanfranciscodisplay-regular-webfont.woff2"); 
 }
 
 /* Bold */
 @font-face {
   font-family: 'San Francisco';
   font-weight: bold;
-  src: url("./remarkjs/fonts/sanfranciscodisplay-bold-webfont.woff2"); 
+  src: url("./fonts/sanfranciscodisplay-bold-webfont.woff2"); 
 }
 /*url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff2");*/ 
 /*url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.woff2");*/ 
@@ -62,10 +69,7 @@ h1, h2, h3 {
 .remark-slide-content h1 { font-size: 3em; }
 .remark-slide-content h2 { font-size: 2em; }
 .remark-slide-content h3 { font-size: 1.6em; }
-.footnote {
-  position: absolute;
-  bottom: 3em;
-}
+
 li p { line-height: 1.25em; }
 
 a, a > code {
@@ -113,83 +117,10 @@ code {
   background: linear-gradient(to bottom, #000 0%, #1a2028 50%, #293845 100%);
 }
 
-.remark-slide-content {
-  background-size: contain; 
-  background-position: center;
-  background-repeat: no-repeat;
-} 
-
-
-/* Slide-specific styling */
-#slide-inverse .footnote {
-  bottom: 12px;
-  left: 20px;
-}
-#slide-how .slides {
-  font-size: 0.9em;
-  position: absolute;
-  top:  151px;
-  right: 140px;
-}
-#slide-how .slides h3 {
-  margin-top: 0.2em;
-}
-#slide-how .slides .first, #slide-how .slides .second {
-  padding: 1px 20px;
-  height: 90px;
-  width: 120px;
-  -moz-box-shadow: 0 0 10px #777;
-  -webkit-box-shadow: 0 0 10px #777;
-  box-shadow: 0 0 10px #777;
-}
-#slide-how .slides .first {
-  background: #fff;
-  position: absolute;
-  top: 20%;
-  left: 20%;
-  z-index: 1;
-}
-#slide-how .slides .second {
-  position: relative;
-  background: #fff;
-  z-index: 0;
-}
-
-/* Two-column layout */
-.left-column {
-  color: #777;
-  width: 20%;
-  height: 92%;
-  float: left;
-}
-  .left-column h2:last-of-type, .left-column h3:last-child {
-    color: #000;
-  }
-.right-column {
-  width: 75%;
-  float: right;
-  padding-top: 1em;
-}
-
-.column:first-of-type {float:left}
-.column:last-of-type {float:right}
-
-.split-30 .column:first-of-type {width: 30%}
-.split-30 .column:last-of-type {width: 70%}
-.split-40 .column:first-of-type {width: 40%}
-.split-40 .column:last-of-type {width: 60%}
-.split-50 .column:first-of-type {width: 50%}
-.split-50 .column:last-of-type {width: 50%}
-.split-60 .column:first-of-type {width: 60%}
-.split-60 .column:last-of-type {width: 40%}
-.split-70 .column:first-of-type {width: 70%}
-.split-70 .column:last-of-type {width: 30%}
-
-/* custom font class */
-.red { color: #fa0000; }
-.large { font-size: 2em; }
+/* custom font */
 .round { font-family: 'Quicksand';}
-.small { font-size: 67% }
+.xkcd { font-family: 'xkcd';}
+
 
 /* table related */
 .tg  {
