@@ -1,0 +1,68 @@
+
+
+/* for full page image */
+.remark-slide-content {
+  background-size: contain; 
+  background-position: center;
+  background-repeat: no-repeat;
+} 
+
+/* Two-column layout: left as menu */
+.left-column {
+  color: #777;
+  width: 20%;
+  height: 92%;
+  float: left;
+}
+  .left-column h2:last-of-type, .left-column h3:last-child {
+    color: #000;
+  }
+.right-column {
+  width: 75%;
+  float: right;
+  padding-top: 1em;
+}
+
+/* Two-column layout: generic */
+.column:first-of-type {float:left}
+.column:last-of-type {float:right}
+
+.split-10 .column:first-of-type {width:  7.5%;}
+.split-10 .column:last-of-type { width: 87.5%;}
+
+.split-20 .column:first-of-type {width: 17.5%;}
+.split-20 .column:last-of-type { width: 77.5%;}
+
+.split-30 .column:first-of-type {width: 27.5%;}
+.split-30 .column:last-of-type { width: 67.5%;}
+
+.split-40 .column:first-of-type {width: 37.5%;}
+.split-40 .column:last-of-type { width: 57.5%;}
+
+.split-50 .column:first-of-type {width: 47.5%;}
+.split-50 .column:last-of-type { width: 47.5%;}
+
+.split-60 .column:first-of-type {width: 57.5%;}
+.split-60 .column:last-of-type { width: 37.5%;}
+
+.split-70 .column:first-of-type {width: 67.5%;}
+.split-70 .column:last-of-type { width: 27.5%;}
+
+.split-80 .column:first-of-type {width: 77.5%;}
+.split-80 .column:last-of-type { width: 17.5%;}
+
+.split-90 .column:first-of-type {width: 87.5%;}
+.split-90 .column:last-of-type { width:  7.5%;}
+
+
+/* custom font class */
+.footnote { position: absolute; bottom: 3em; }
+.red { color: #fa0000; }
+.large { font-size: 2em; }
+.small { font-size: 67% }
+.dot:before { content: '\2022'; }
+.align-justify { display: block; text-align: justify; text-justify: inter-word; }
+.align-center { display: block; text-align: center; }
+.align-left { display: block; text-align: left; }
+.align-right { display: block; text-align: right; }
+
