@@ -80,9 +80,9 @@ function searching() {
           linkstr +=  text.substring(0, 100);
         } else {
           //var link = document.createTextNode("Page "+p);
-          linkstr = linkstr.substring(0, linkstr.length - 2);
+          linkstr = linkstr;//.substring(0, linkstr.length - 2);
         }
-        linkstr += '......... Page ' + p + ''
+        linkstr += '......... Page ' + p + '';
         var link = document.createTextNode(linkstr);
         a.appendChild(link);
         //a.title = title;
