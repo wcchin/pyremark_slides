@@ -11,6 +11,7 @@
       };
       </script><script type="text/javascript" id="MathJax-script" async src="remarkjs/mathjax-svg.js"></script>{% endif %}
     {% if add_sidebar %}<link rel="stylesheet" href="remarkjs/sidebar.css">{% endif %}
+    {% if add_searchbar %}<link rel="stylesheet" href="remarkjs/searchMod.css">{% endif %}
     {% if not(custom_css is none) %}<link rel="stylesheet" href="{{ custom_css }}">{% endif %}
   </head>
   <body>
@@ -27,12 +28,43 @@
       <div class="bar3"></div>
   </div>-->
     {% endif %}
+    {% if add_searchbar %}
+    <div id="searchModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="closeSearch">&times;</span>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="searchText" name="searchText" placeholder="Search" onkeyup="searching(this);" >
+          <button id="clearSearch" type="button" onclick="clearSearch();">Clear</button>
+        </div>
+        <div class="modal-footer">
+          <div class="searchResult" id="searchResult">
+            <span>Searching ...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
     <textarea id="source">
 
 {{content}}
 
     </textarea>
 
+    {% if add_searchbar %}<script src="remarkjs/minisearch.min.js"  type="text/javascript"></script>
+    <script>
+      const contentIndex = {{ content_indexes }}
+      let miniSearch = new MiniSearch({
+        fields: ['title', 'text'], // fields to index for full-text search
+        storeFields: ['title', 'text'], // fields to return with search results
+        searchOptions: { prefix: true }
+      })
+      miniSearch.addAll(contentIndex)
+    </script>
+    <script src="remarkjs/searchMod.js"  type="text/javascript"></script>{% endif %}
     {% if add_sidebar %}<script src="remarkjs/sidebar.js"  type="text/javascript"></script>{% endif %}
     {% if use_mermaid %}<script src="remarkjs/mermaid.min.js"  type="text/javascript"></script> <!- 8.8.0 ->
     <script>mermaid.initialize({startOnLoad:true});</script>{% endif %}

@@ -202,7 +202,7 @@ def prepare_toc(toc_list):
 
 class slides():
     def __init__(self, afile):
-        doc, config, toc = self.process_md(afile)
+        doc, config, toc, content_list = self.process_md(afile)
         # html = markdown.markdown(doc, extensions=['toc'])
         # print(html)
         toc_str = prepare_toc(toc)
@@ -259,6 +259,7 @@ class slides():
         maindic = {}
         maindic['content'] = content
         maindic['table_of_content'] = toc_str
+        maindic['content_indexes'] = content_list
         maindic.update(config)
 
         """
@@ -307,16 +308,31 @@ class slides():
         for k, v in config.items():
             config2[k] = ' '.join(v)
         toc = []
+        content_list = []
         p = 0  # first --- is to separate the header config
+        cur_text = {"id": p, "title": "", "text": ""}
         for line in doc.split('\n'):
             if len(line) > 0 and line[0] == '#':
-                #print(p, line)
                 toc.append((p, line))
+                cur_text["title"] += " " + line
             elif len(line.strip()) == 3 and line.strip() == "---":
+                if cur_text["id"] > 0:
+                    content_list.append(cur_text)
                 p += 1
-            # print(line)
+                cur_text = {"id": p, "title": "", "text": ""}
+            else:
+                skips = ["layout:", "name:", "class:"]
+                for sk in skips:
+                    if line[:len(sk)] == sk:
+                        continue
+                else:
+                    cur_text["text"] += " " + line.strip()
+        #  catch the last page
+        if (len(cur_text["text"]) > 0) or (len(cur_text["title"]) > 0):
+            content_list.append(cur_text)
+        # print(line)
 
-        return doc, config2, toc
+        return doc, config2, toc, content_list
 
 
 if __name__ == '__main__':
