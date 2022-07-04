@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Note 2022-06-16</title>
+    <meta charset="utf-8">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+      </script><script type="text/javascript" id="MathJax-script" async src="remarkjs/mathjax-svg.js"></script>
+    <link rel="stylesheet" href="remarkjs/sidebar.css">
+    <link rel="stylesheet" href="remarkjs/searchMod.css">
+    <link rel="stylesheet" href="remarkjs/applestyle.css">
+  </head>
+  <body>
+    
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <!-- <a href="#">About</a> -->
+      <a href="#1">1- Note 2022/05/19</a><a href="#2">2-# I: Net-flow (hourly trend)</a><a href="#5">5-## help you build a culture of excellence.</a>
+    </div>
+    <!--
+    <div class="menu-toggle" id="menu-toggle" onclick="openNav(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+  </div>-->
+    
+    
+    <div id="searchModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="closeSearch">&times;</span>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="searchText" name="searchText" placeholder="Search" onkeyup="searching(this);" >
+          <button id="clearSearch" type="button" onclick="clearSearch();">Clear</button>
+        </div>
+        <div class="modal-footer">
+          <div class="searchResult" id="searchResult">
+            <span>Searching ...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <textarea id="source">
+
+name: inverse
+layout: true
+class: left, middle, inverse
+---
+name: Title page
+# Note 2022/05/19
+On LTA flow data
+1. Net-flow (hourly trend)
+2. Net-flow (monthly trend)
+3. Average trip distance (monthly trend)
+4. Work tasks
+
+.footnote[.red.bold[*] .round[Benny@2022-05-19]]
+
+---
+name: Chapter 1
+class: center, middle, inverse
+## I: Net-flow (hourly trend)
+To capture IO in one trend line  $F=x^2$.
+
+---
+layout: false
+
+$$
+F = mc^2
+$$
+
+---
+
+$$
+\begin{aligned} 
+y & = x^4 + 4      \nonumber \\
+& = (x^2+2)^2 -4x^2 \nonumber \\
+& \le(x^2+2)^2    \nonumber
+\end{aligned}
+$$
+
+This work, note in code on the slashed underline: 
+\begin{align} 
+EF &= \frac{A\_{ik} / A\_i}{A\_k / A\_T} \nonumber \\\
+&= A\_{ik} \times \frac{A\_T}{A\_i \times A\_k }
+\end{align}
+
+This won't work, this happen when the frac and underline is used, if two underlines were detected, it is recognized as the markdown italic:  
+\begin{align} 
+EF &= \frac{A_{ik} / A_{i}}{A_{k} / A_{T}} \nonumber \\
+&= A_{ik} \times \frac{A_{T}}{A_{i}} \times A_{k}} 
+\end{align}
+
+\\begin{equation} 
+EF = \frac{A_{ik}/A_i}{A_k/A_T}
+\\end{equation}
+
+\\begin{equation}
+EF = A_{ik} \times \frac{A_T}{A_i \times A_k}
+\\end{equation}
+
+some words
+
+\\begin{align}
+y &= x^4 + 4      \nonumber \\\
+&= (x^2+2)^2 -4x^2 \nonumber \\\
+&\le (x^2+2)^2    \nonumber
+\\end{align}
+
+
+---
+
+To capture IO in one trend line
+### help you build a culture of excellence.
+
+.round[Testing font]
+
+
+    </textarea>
+
+    <script src="remarkjs/minisearch.min.js"  type="text/javascript"></script>
+    <script>
+      const contentIndex = [{'id': 1, 'title': ' # Note 2022/05/19', 'text': ' name: Title page On LTA flow data 1. Net-flow (hourly trend) 2. Net-flow (monthly trend) 3. Average trip distance (monthly trend) 4. Work tasks  .footnote[.red.bold[*] .round[Benny@2022-05-19]] '}, {'id': 2, 'title': ' ## I: Net-flow (hourly trend)', 'text': ' name: Chapter 1 class: center, middle, inverse To capture IO in one trend line  $F=x^2$. '}, {'id': 3, 'title': '', 'text': ' layout: false  $$ F = mc^2 $$ '}, {'id': 4, 'title': '', 'text': "  $$ \\begin{aligned} y & = x^4 + 4      \\nonumber \\\\ & = (x^2+2)^2 -4x^2 \\nonumber \\\\ & \\le(x^2+2)^2    \\nonumber \\end{aligned} $$  This work, note in code on the slashed underline: \\begin{align} EF &= \\frac{A\\_{ik} / A\\_i}{A\\_k / A\\_T} \\nonumber \\\\\\ &= A\\_{ik} \\times \\frac{A\\_T}{A\\_i \\times A\\_k } \\end{align}  This won't work, this happen when the frac and underline is used, if two underlines were detected, it is recognized as the markdown italic: \\begin{align} EF &= \\frac{A_{ik} / A_{i}}{A_{k} / A_{T}} \\nonumber \\\\ &= A_{ik} \\times \\frac{A_{T}}{A_{i}} \\times A_{k}} \\end{align}  \\\\begin{equation} EF = \\frac{A_{ik}/A_i}{A_k/A_T} \\\\end{equation}  \\\\begin{equation} EF = A_{ik} \\times \\frac{A_T}{A_i \\times A_k} \\\\end{equation}  some words  \\\\begin{align} y &= x^4 + 4      \\nonumber \\\\\\ &= (x^2+2)^2 -4x^2 \\nonumber \\\\\\ &\\le (x^2+2)^2    \\nonumber \\\\end{align}  "}, {'id': 5, 'title': ' ### help you build a culture of excellence.', 'text': '  To capture IO in one trend line  .round[Testing font] '}]
+      let miniSearch = new MiniSearch({
+        fields: ['title', 'text'], // fields to index for full-text search
+        storeFields: ['title', 'text'], // fields to return with search results
+        searchOptions: { prefix: true }
+      })
+      miniSearch.addAll(contentIndex)
+    </script>
+    <script src="remarkjs/searchMod.js"  type="text/javascript"></script>
+    <script src="remarkjs/sidebar.js"  type="text/javascript"></script>
+    
+    <script src="remarkjs/remark-0.15.0.js"  type="text/javascript"></script>
+    <script>
+      var options = {};
+      options['ratio'] = "16:9"; 
+      options['navigation'] = {scroll: false, touch: true, click: false};
+      var slideshow = remark.create(options);
+    </script>
+  </body>
+</html>

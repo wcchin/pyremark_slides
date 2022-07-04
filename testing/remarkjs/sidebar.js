@@ -20,11 +20,13 @@ function closeNav() {
 
 
 window.addEventListener("keydown", function (event) {
-  if (event.key === 't') {
-    if (document.getElementById("mySidenav").style.width === "500px") {
-      closeNav();
-    } else {
-      openNav();
+  if (!(document.getElementById("searchModal").style.display === "block")) { // prevent toc when search bar is on
+    if (event.key === 'q') {
+      if (document.getElementById("mySidenav").style.width === "500px") {
+        closeNav();
+      } else {
+        openNav();
+      }
     }
   }
 }, true);
