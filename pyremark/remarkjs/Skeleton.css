@@ -97,9 +97,12 @@ code {
   color: #e8e9eb; /*#777872;*/
   text-shadow: 0 0 20px #333;
 }
-.inverse h1, .inverse h2 {
+.inverse h1, .inverse h2, .inverse h3 {
   color: #e8e9eb;
   line-height: 0.8em;
+}
+.inverse h2, .inverse h3 {
+  text-transform: uppercase;
 }
 
 .inverselite {
@@ -123,6 +126,7 @@ code {
   
 /* table related */
 .tg  {
+  font-size: 15px;
   margin-left: auto;margin-right: auto;
   border-collapse:collapse;border-spacing:0;
 }
@@ -130,7 +134,9 @@ code {
 .tg td {
   padding: 12px 15px;
   text-align: left;
-  border-bottom: 1px solid #E1E1E1; }
+  border-bottom: 1px solid #9897a9; }
+.tg th {
+  border-top: 1px solid #9897a9; }
   
 .tg th:first-child,
 .tg td:first-child {
@@ -151,7 +157,7 @@ code {
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;
 }
 */
-.tg .tg-basic-small{text-align:left;vertical-align:middle;font-size:14px;}
+.tg .tg-basic-small{text-align:left;vertical-align:middle;font-size:0.8em;}
 .tg .tg-basic{text-align:left;vertical-align:middle}
 .tg .tg-center{text-align:center;vertical-align:middle}
 .tg .tg-right{text-align:right;vertical-align:middle}
