@@ -1,8 +1,8 @@
 
 # pyremark_slides
-**a python package for converting markdown to remark.js slides**
+**a python package for converting markdown to [remarkjs](https://github.com/gnab/remark) slides**.
 
-a sister project of <a href="https://github.com/wcchin/pyreveal" target="_blank">pyreveal</a>.
+a sister project of <a href="https://github.com/wcchin/pyreveal" target="_blank">pyreveal</a>. 
 
 This project is done to put the markdown content to a base template file which is styled using jinja2, and also use the yaml header to do the config for each file. 
 
@@ -39,6 +39,12 @@ a file name `a_file.slides.html` will be generated, open it with a browser.
 
     second page
 
+## Some additional feature (2023/2/13)
+
+- press `s` to access the search function. 
+- press `q` for the table of content.  
+
+These features were in testing stage. 
 
 Note:
 
