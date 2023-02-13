@@ -12,6 +12,7 @@ setup(
     #package_dir={'':'pyremark'},
 
     include_package_data=True,
+    package_data={'': ['templates/*.html']},
 
     url="https://github.com/wcchin/pyremark_slides",
 
