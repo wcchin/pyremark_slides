@@ -1,5 +1,5 @@
 slide_title: Note 2022-06-16
-custom_css: remarkjs/applestyle.css
+custom_css: remarkjs/Catppuccin.css
 aspect_ratio: 16:9
 remarkjs_path: remarkjs/remark-0.15.0.js
 mathjaxjs_path: remarkjs/mathjax-svg.js
