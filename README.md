@@ -32,11 +32,11 @@ a file name `a_file.slides.html` will be generated, open it with a browser.
     slide_title: testing remarkjs
     custom_css: custom.css
     remarkjs_path: remarkjs/remark-0.15.0.js
-
+    
     # Some title
-
+    
     ---
-
+    
     second page
 
 ## Some additional feature (2023/2/13)
@@ -58,7 +58,7 @@ custom.css file default to this:
     @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
     @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
     @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-
+    
     body { font-family: 'Droid Serif'; }
     h1, h2, h3 {
       font-family: 'Yanone Kaffeesatz';
@@ -68,7 +68,7 @@ custom.css file default to this:
 
 
 
-## Update
+## Update (2024-01-11)
 
 - added catppuccin style, which use Montserrat as default font. 
 - added gen_pdf.sh bash script in the testing folder, the to_generate_pdf.md is also updated to show the usage. [Decktape](https://github.com/astefanutti/decktape) is required. 
