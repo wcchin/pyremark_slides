@@ -68,3 +68,7 @@ custom.css file default to this:
 
 
 
+## Update
+
+- added catppuccin style, which use Montserrat as default font. 
+- added gen_pdf.sh bash script in the testing folder, the to_generate_pdf.md is also updated to show the usage. [Decktape](https://github.com/astefanutti/decktape) is required. 

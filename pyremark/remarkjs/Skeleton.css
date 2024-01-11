@@ -180,3 +180,20 @@ ol ul {
   font-size: 90%; }
 li {
   margin-bottom: 1rem; }
+
+
+/* Two-column layout: left as menu */
+.left-column {
+  color: #777;
+  width: 20%;
+  height: 92%;
+  float: left;
+}
+.left-column h2:last-of-type, .left-column h3:last-child {
+  color: #000;
+}
+.right-column {
+  width: 75%;
+  float: right;
+  padding-top: 1em;
+}

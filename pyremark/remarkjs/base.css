@@ -7,21 +7,6 @@
   background-repeat: no-repeat;
 } 
 
-/* Two-column layout: left as menu */
-.left-column {
-  color: #777;
-  width: 20%;
-  height: 92%;
-  float: left;
-}
-  .left-column h2:last-of-type, .left-column h3:last-child {
-    color: #000;
-  }
-.right-column {
-  width: 75%;
-  float: right;
-  padding-top: 1em;
-}
 
 /* Two-column layout: generic */
 .column:first-of-type {float:left}
@@ -56,13 +41,42 @@
 
 
 /* custom font class */
-.footnote { position: absolute; bottom: 3em; }
+/*.footnote { position: absolute; bottom: 3em; left: 5em; }*/
+.headnote { 
+  position: absolute; 
+  top: 2em; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+.footnote { 
+  position: absolute; 
+  bottom: 1em; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
 .red { color: #fa0000; }
-.large { font-size: 2em; }
-.small { font-size: 67% }
 .dot:before { content: '\2022'; }
 .align-justify { display: block; text-align: justify; text-justify: inter-word; }
 .align-center { display: block; text-align: center; }
 .align-left { display: block; text-align: left; }
 .align-right { display: block; text-align: right; }
 
+/* text manipulation */
+.smaller { font-size: smaller; }
+.larger { font-size: larger; }
+/*.small { font-size: 67% }
+.large { font-size: 2em; }*/
+
+.small { font-size: small; }
+.x-small { font-size: x-small; }
+.xx-small { font-size: xx-small; }
+
+.large { font-size: large; }
+.x-large { font-size: x-large; }
+.xx-large { font-size: xx-large; }
+.xxx-large { font-size: xxx-large; }
+
+.center { text-align: center; }
+.justify { text-align: justify; }
+.align-left { text-align: left; }
+.align-right { text-align: right; }
