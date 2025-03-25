@@ -6,7 +6,12 @@
     {% if use_mathjax %}<script>
       MathJax = {
         tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          Macros: {
+            '\\_': '_'
+          }
+          processEscapes: true
         }
       };
       </script><script type="text/javascript" id="MathJax-script" async src="remarkjs/mathjax-svg.js"></script>{% endif %}
