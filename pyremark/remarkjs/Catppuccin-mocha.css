@@ -63,26 +63,26 @@ start here
     --hand-font: 'xkcd';
     --round-font: 'Quicksand';
     --square-font: 'Microsquare';
-    --bg-content: var(--ctp-latte-base);
-    --bg-inversed: linear-gradient(to bottom, var(--ctp-mocha-crust) 0%, var(--ctp-macchiato-mantle) 50%, var(--ctp-frappe-base) 100%);
+    --bg-content: var(--ctp-macchiato-mantle);
+    --bg-inversed: linear-gradient(to bottom, var(--ctp-mocha-crust) 0%, var(--ctp-macchiato-surface0) 50%, var(--ctp-mocha-crust) 100%);
     --bg-external: var(--ctp-mocha-crust);
-    --text-content: var(--ctp-latte-text);
-    --text-inversed: var(--ctp-mocha-text);
-    --white-color: var(--ctp-latte-base);
-    --black-color: var(--ctp-latte-text);
-    --red-color: var(--ctp-latte-maroon);
-    --orange-color: var(--ctp-latte-peach);
-    --blue-color: var(--ctp-latte-lavender);
-    --grey-color: var(--ctp-latte-overlay2);
-    --light-grey-color: var(--ctp-latte-surface2);
-    --text-highlight-bg: var(--ctp-latte-yellow);
-    --text-highlight: var(--ctp-latte-mauve);
-    --code-bg: var(--ctp-mocha-text);
-    --code-text: var(--ctp-mocha-crust);
-    --code-highlight: var(--ctp-mocha-mantle);
-    --table-head-bg: var(--ctp-mocha-crust);
-    --table-data-bg: var(--ctp-latte-mantle);
-    --table-line: var(--ctp-frappe-base);
+    --text-content: var(--ctp-mocha-text);
+    --text-inversed: var(--ctp-mocha-subtext1);
+    --white-color: var(--ctp-mocha-base);
+    --black-color: var(--ctp-mocha-text);
+    --red-color: var(--ctp-mocha-maroon);
+    --orange-color: var(--ctp-mocha-peach);
+    --blue-color: var(--ctp-mocha-blue);
+    --grey-color: var(--ctp-mocha-overlay2);
+    --light-grey-color: var(--ctp-mocha-surface2);
+    --text-highlight-bg: var(--ctp-mocha-yellow);
+    --text-highlight: var(--ctp-mocha-mauve);
+    --code-bg: var(--ctp-latte-text);
+    --code-text: var(--ctp-latte-crust);
+    --code-highlight: var(--ctp-late-mantle);
+    --table-head-bg: var(--ctp-mocha-subtext0);
+    --table-data-bg: var(--ctp-mocha-base);
+    --table-line: var(--ctp-mocha-overlay0);
 }
 
 

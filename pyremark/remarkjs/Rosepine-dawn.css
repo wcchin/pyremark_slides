@@ -1,28 +1,13 @@
 @import url('base.css');
-@import url('catppuccin_colors.css');
-/*@import url('colors_config.css');*/
+@import url('rosepine_colors.css');
 
 /*=========================================
 import fonts
 =========================================== */
-/* Montserrat italic */
-@font-face {
-  font-family: 'Montserrat';
-  font-weight: 100 900;
-  font-style: italic, oblique;
-  src: url("./fonts/Montserrat-Italic-VariableFont_wght.ttf"); 
-}
-/* Montserrat regular*/
-@font-face {
-  font-family: 'Montserrat';
-  font-weight: 100 900;
-  font-style: normal;
-  src: url("./fonts/Montserrat-VariableFont_wght.ttf"); 
-}
 /* Rounded */
 @font-face{
-  font-family: 'Quicksand';
-  src: url('./fonts/Quicksand-VariableFont_wght.ttf');
+  font-family: 'Raleway';
+  src: url('./fonts/Raleway-VariableFont_wght.ttf');
 }
 /* Mono italic */
 @font-face{
@@ -52,37 +37,67 @@ import fonts
   src: url('./fonts/MicroSquare Regular.ttf');
 }
 
+.suse-regular {
+  font-family: "SUSE", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  src: url("./fonts/SUSE-VariableFont_wght.ttf"); 
+}
+.suse-bold {
+  font-family: "SUSE", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  src: url("./fonts/SUSE-VariableFont_wght.ttf"); 
+}
+
+.ibm-plex-sans-regular {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  src: url("./fonts/IBMPlexSans-VariableFont_wdth,wght.ttf"); 
+}
+
+.ibm-plex-sans-bold {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  src: url("./fonts/IBMPlexSans-VariableFont_wdth,wght.ttf"); 
+}
+
+
 /*=========================================
 start here
 =========================================== */
 :root {
-    --head-font: 'Montserrat';
-    --main-font: 'Montserrat';  /* can change to Lora in future */
+    --head-font: 'SUSE';
+    --main-font: 'IBM Plex Sans';
     --wide-font: 'Lexend';
-    --mono-font: 'Red Hat Mono';
+    --mono-font: 'Sometype Mono';
     --hand-font: 'xkcd';
-    --round-font: 'Quicksand';
+    --round-font: 'Raleway';
     --square-font: 'Microsquare';
-    --bg-content: var(--ctp-latte-base);
-    --bg-inversed: linear-gradient(to bottom, var(--ctp-mocha-crust) 0%, var(--ctp-macchiato-mantle) 50%, var(--ctp-frappe-base) 100%);
-    --bg-external: var(--ctp-mocha-crust);
-    --text-content: var(--ctp-latte-text);
-    --text-inversed: var(--ctp-mocha-text);
-    --white-color: var(--ctp-latte-base);
-    --black-color: var(--ctp-latte-text);
-    --red-color: var(--ctp-latte-maroon);
-    --orange-color: var(--ctp-latte-peach);
-    --blue-color: var(--ctp-latte-lavender);
-    --grey-color: var(--ctp-latte-overlay2);
-    --light-grey-color: var(--ctp-latte-surface2);
-    --text-highlight-bg: var(--ctp-latte-yellow);
-    --text-highlight: var(--ctp-latte-mauve);
-    --code-bg: var(--ctp-mocha-text);
-    --code-text: var(--ctp-mocha-crust);
-    --code-highlight: var(--ctp-mocha-mantle);
-    --table-head-bg: var(--ctp-mocha-crust);
-    --table-data-bg: var(--ctp-latte-mantle);
-    --table-line: var(--ctp-frappe-base);
+    --bg-content: var(--rp-dawn-highlight-low);
+    --bg-inversed: linear-gradient(to bottom, var(--rp-moon-base) 0%, var(--rp-moon-muted) 100%);
+    --bg-external: var(--rp-moon-base);
+    --text-content: var(--rp-dawn-text);
+    --text-inversed: var(--rp-text);
+    --white-color: var(--rp-dawn-base);
+    --black-color: var(--rp-moon-base);
+    --red-color: var(--rp-dawn-love);
+    --orange-color: var(--rp-dawn-gold);
+    --blue-color: var(--rp-dawn-pine);
+    --grey-color: var(--rp-highlight-high);
+    --light-grey-color: var(--rp-dawn-muted);
+    --text-highlight-bg: var(--rp-moon-gold);
+    --text-highlight: var(--rp-moon-pine);
+    --code-bg: var(--rp-dawn-surface);
+    --code-text: var(--rp-dawn-text);
+    --code-highlight: var(--rp-highlight-med);
+    --table-head-bg: var(--rp-moon-base);
+    --table-data-bg: var(--rp-dawn-base);
+    --table-line: var(--rp-base);
 }
 
 
