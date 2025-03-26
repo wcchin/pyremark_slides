@@ -42,9 +42,9 @@ a file name `a_file.slides.html` will be generated, open it with a browser.
     
 ## Available themes
 - Catppuccin: [Latte](testing/demo_0-Catppuccin_latte.slides.html) and [Mocha](testing/demo_1-Catppuccin_mocha.slides.html)
-- Rose Pine: [Dawn](demo_2-RosePine-dawn.slides.html) and [Moon](demo_3-RosePine-moon.slides.html)
-- Nord: [Polar](demo_4-Nord-polar.slides.html) | [Storm](demo_5-Nord-storm.slides.html)
-- Evergreen: [Day](ddemo_6-Everforest-day.slides.html) | [Night](demo_7-Everforest-night.slides.html)
+- Rose Pine: [Dawn](testing/demo_2-RosePine-dawn.slides.html) and [Moon](testing/demo_3-RosePine-moon.slides.html)
+- Nord: [Polar](testing/demo_4-Nord-polar.slides.html) | [Storm](testing/demo_5-Nord-storm.slides.html)
+- Evergreen: [Day](testing/demo_6-Everforest-day.slides.html) | [Night](testing/demo_7-Everforest-night.slides.html)
 
 
     
