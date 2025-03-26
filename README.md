@@ -38,6 +38,27 @@ a file name `a_file.slides.html` will be generated, open it with a browser.
     ---
     
     second page
+    
+    
+## Available themes
+- Catppuccin: [Latte](testing/demo_0-Catppuccin_latte.slides.html) and [Mocha](testing/demo_1-Catppuccin_mocha.slides.html)
+- Rose Pine: [Dawn](demo_2-RosePine-dawn.slides.html) and [Moon](demo_3-RosePine-moon.slides.html)
+- Nord: [Polar](demo_4-Nord-polar.slides.html) | [Storm](demo_5-Nord-storm.slides.html)
+- Evergreen: [Day](ddemo_6-Everforest-day.slides.html) | [Night](demo_7-Everforest-night.slides.html)
+
+
+    
+## Added more themes (2025-03-26)
+- make the Catppuccin theme to be generic, and added one dark theme based on Catppuccin
+- added Rose Pine, Nord, and Everforest series themes
+- added demo of the 4x2 themes.
+- and fixed "the mathjax \_ not show properly issue"
+
+## Update (2024-01-11)
+
+- added catppuccin style, which use Montserrat as default font. 
+- added gen_pdf.sh bash script in the testing folder, the to_generate_pdf.md is also updated to show the usage. [Decktape](https://github.com/astefanutti/decktape) is required. 
+
 
 ## Some additional feature (2023/2/13)
 
@@ -66,9 +87,3 @@ custom.css file default to this:
     }
     .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
 
-
-
-## Update (2024-01-11)
-
-- added catppuccin style, which use Montserrat as default font. 
-- added gen_pdf.sh bash script in the testing folder, the to_generate_pdf.md is also updated to show the usage. [Decktape](https://github.com/astefanutti/decktape) is required. 
