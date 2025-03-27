@@ -78,10 +78,10 @@ start here
     --round-font: 'Raleway';
     --square-font: 'Microsquare';
     --bg-content: var(--ef-dark-bg1);
-    --bg-inversed: linear-gradient(to bottom, var(--ef-dark-bg0) 0%, var(--ef-light-bg6) 50%, var(--ef-dark-bg0) 100%);
+    --bg-inversed: var(--ef-dark-bg0);/*linear-gradient(to bottom, var(--ef-dark-bg0) 0%, var(--ef-light-bg6) 50%, var(--ef-dark-bg0) 100%);*/
     --bg-external: var(--ef-dark-bg6);
     --text-content: var(--ef-light-bg6);
-    --text-inversed: var(--ef-dark-bg0);
+    --text-inversed: var(--ef-dark-fg);
     --white-color: var(--ef-light-bg1);
     --black-color: var(--ef-dark-bg0);
     --red-color: var(--ef-dark-red);
