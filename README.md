@@ -49,7 +49,7 @@ a file name `a_file.slides.html` will be generated, open it with a browser.
 - Evergreen: [Day](testing/demo_6-Everforest-day.slides.html) | [Night](testing/demo_7-Everforest-night.slides.html)
 
 ### Screenshot
-
+<a href="theme_demo/demo-Catppuccin-Mocha-title.png"><img src="theme_demo/demo-Catppuccin-Mocha-title.tb.png" alt="Catppuccin - Mocha - title" style="max-width: 100%;"></a>
 <table>
     <tr>
         <td>Theme</td>
