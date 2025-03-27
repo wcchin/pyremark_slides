@@ -59,68 +59,53 @@ a file name `a_file.slides.html` will be generated, open it with a browser.
     </tr>
     <tr>
         <td>Catppuccin</td>
-        <td>Mocha &lt;br /&gt;(dark)</td>
+        <td>Mocha  (dark)</td>
         <td><a href="theme_demo/demo-Catppuccin-Mocha-title.png"><img src="theme_demo/demo-Catppuccin-Mocha-title.tb.png" alt="Catppuccin - Mocha - title" style="max-width: 100%;"></a></td>
         <td><a href="theme_demo/demo-Catppuccin-Mocha-content.png"><img src="theme_demo/demo-Catppuccin-Mocha-content.tb.png" alt="Catppuccin - Mocha - content" style="max-width: 100%;"></a></td>
     </tr>
     <tr>
         <td>Catppuccin</td>
-        <td>Latte &lt;br /&gt;(light)</td>
+        <td>Latte  (light)</td>
         <td><a href="theme_demo/demo-Catppuccin-Latte-title.png"><img src="theme_demo/demo-Catppuccin-Latte-title.tb.png" alt="Catppuccin - Latte - title" style="max-width: 100%;"></a></td>
         <td><a href="theme_demo/demo-Catppuccin-Latte-content.png"><img src="theme_demo/demo-Catppuccin-Latte-content.tb.png" alt="Catppuccin - Latte - content" style="max-width: 100%;"></a></td>
     </tr>
     <tr>
         <td>Rosepine</td>
-        <td>Moon&lt;br /&gt;(dark)</td>
+        <td>Moon (dark)</td>
         <td><a href="theme_demo/demo-Rosepine-Moon-title.png"><img src="theme_demo/demo-Rosepine-Moon-title.tb.png" alt="Rosepine - Moon - title" style="max-width: 100%;"></a></td>
         <td><a href="theme_demo/demo-Rosepine-Moon-content.png"><img src="theme_demo/demo-Rosepine-Moon-content.tb.png" alt="Rosepine - Moon - content" style="max-width: 100%;"></a></td>
     </tr>
     <tr>
         <td>Rosepine</td>
-        <td>Dawn&lt;br /&gt;(light)</td>
+        <td>Dawn (light)</td>
         <td><a href="theme_demo/demo-Rosepine-Dawn-title.png"><img src="theme_demo/demo-Rosepine-Dawn-title.tb.png" alt="Rosepine - Dawn - title" style="max-width: 100%;"></a></td>
         <td><a href="theme_demo/demo-Rosepine-Dawn-content.png"><img src="theme_demo/demo-Rosepine-Dawn-content.tb.png" alt="Rosepine - Dawn - content" style="max-width: 100%;"></a></td>
     </tr>
     <tr>
         <td>Everforest</td>
-        <td>Night&lt;br /&gt;(dark)</td>
+        <td>Night (dark)</td>
         <td><a href="theme_demo/demo-Everforest-Night-title.png"><img src="theme_demo/demo-Everforest-Night-title.tb.png" alt="Everforest - Night - title" style="max-width: 100%;"></a></td>
         <td><a href="theme_demo/demo-Everforest-Night-content.png"><img src="theme_demo/demo-Everforest-Night-content.tb.png" alt="Everforest - Night - content" style="max-width: 100%;"></a></td>
     </tr>
     <tr>
         <td>Everforest</td>
-        <td>Day&lt;br /&gt;(light)</td>
+        <td>Day (light)</td>
         <td><a href="theme_demo/demo-Everforest-Day-title.png"><img src="theme_demo/demo-Everforest-Day-title.tb.png" alt="Everforest - Day - title" style="max-width: 100%;"></a></td>
         <td><a href="theme_demo/demo-Everforest-Day-content.png"><img src="theme_demo/demo-Everforest-Day-content.tb.png" alt="Everforest - Day - content" style="max-width: 100%;"></a></td>
     </tr>
     <tr>
         <td>Nord</td>
-        <td>Polar&lt;br /&gt;(dark)</td>
+        <td>Polar (dark)</td>
         <td><a href="theme_demo/demo-Nord-Polar-title.png"><img src="theme_demo/demo-Nord-Polar-title.tb.png" alt="Nord - Polar - title" style="max-width: 100%;"></a></td>
         <td><a href="theme_demo/demo-Nord-Polar-content.png"><img src="theme_demo/demo-Nord-Polar-content.tb.png" alt="Nord - Polar - content" style="max-width: 100%;"></a></td>
     </tr>
     <tr>
         <td>Nord</td>
-        <td>Storm&lt;br /&gt;(light)</td>
+        <td>Storm (light)</td>
         <td><a href="theme_demo/demo-Nord-Storm-title.png"><img src="theme_demo/demo-Nord-Storm-title.tb.png" alt="Nord - Storm - title" style="max-width: 100%;"></a></td>
         <td><a href="theme_demo/demo-Nord-Storm-content.png"><img src="theme_demo/demo-Nord-Storm-content.tb.png" alt="Nord - Storm - content" style="max-width: 100%;"></a></td>
     </tr>
 </table>
-
-
-
-
-
-| Theme      | Style              | Title page                                                   | Content page                                                 |
-| ---------- | ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Catppuccin | Mocha <br />(dark) | [![Catppuccin - Mocha - title](theme_demo/demo-Catppuccin-Mocha-title.tb.png)](theme_demo/demo-Catppuccin-Mocha-title.png) | [![Catppuccin - Mocha - content](theme_demo/demo-Catppuccin-Mocha-content.tb.png)](theme_demo/demo-Catppuccin-Mocha-content.png) |
-| Catppuccin | Latte <br />(light) | [![Catppuccin - Latte - title](theme_demo/demo-Catppuccin-Latte-title.tb.png)](theme_demo/demo-Catppuccin-Latte-title.png) | [![Catppuccin - Latte - content](theme_demo/demo-Catppuccin-Latte-content.tb.png)](theme_demo/demo-Catppuccin-Latte-content.png) |
-| Rosepine | Moon<br />(dark) | [![Rosepine - Moon - title](theme_demo/demo-Rosepine-Moon-title.tb.png)](theme_demo/demo-Rosepine-Moon-title.png) | [![Rosepine - Moon - content](theme_demo/demo-Rosepine-Moon-content.tb.png)](theme_demo/demo-Rosepine-Moon-content.png) |
-| Rosepine | Dawn<br />(light) | [![Rosepine - Dawn - title](theme_demo/demo-Rosepine-Dawn-title.tb.png)](theme_demo/demo-Rosepine-Dawn-title.png) | [![Rosepine - Dawn - content](theme_demo/demo-Rosepine-Dawn-content.tb.png)](theme_demo/demo-Rosepine-Dawn-content.png) |
-| Everforest | Night<br />(dark) | [![Everforest - Night - title](theme_demo/demo-Everforest-Night-title.tb.png)](theme_demo/demo-Everforest-Night-title.png) | [![Everforest - Night - content](theme_demo/demo-Everforest-Night-content.tb.png)](theme_demo/demo-Everforest-Night-content.png) |
-| Everforest | Day<br />(light) | [![Everforest - Day - title](theme_demo/demo-Everforest-Day-title.tb.png)](theme_demo/demo-Everforest-Day-title.png) | [![Everforest - Day - content](theme_demo/demo-Everforest-Day-content.tb.png)](theme_demo/demo-Everforest-Day-content.png) |
-| Nord | Polar<br />(dark) | [![Nord - Polar - title](theme_demo/demo-Nord-Polar-title.tb.png)](theme_demo/demo-Nord-Polar-title.png) | [![Nord - Polar - content](theme_demo/demo-Nord-Polar-content.tb.png)](theme_demo/demo-Nord-Polar-content.png) |
-| Nord | Storm<br />(light) | [![Nord - Storm - title](theme_demo/demo-Nord-Storm-title.tb.png)](theme_demo/demo-Nord-Storm-title.png) | [![Nord - Storm - content](theme_demo/demo-Nord-Storm-content.tb.png)](theme_demo/demo-Nord-Storm-content.png) | Nord | Storm<br />(light) | [![Nord - Storm - title](theme_demo/demo-Nord-Storm-title.tb.png)](theme_demo/demo-Nord-Storm-title.png) | [![Nord - Storm - content](theme_demo/demo-Nord-Storm-content.tb.png)](theme_demo/demo-Nord-Storm-content.png) | 
 
 
 
