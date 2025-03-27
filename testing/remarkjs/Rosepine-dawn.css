@@ -79,10 +79,10 @@ start here
     --round-font: 'Raleway';
     --square-font: 'Microsquare';
     --bg-content: var(--rp-dawn-highlight-low);
-    --bg-inversed: linear-gradient(to bottom, var(--rp-moon-base) 0%, var(--rp-moon-muted) 100%);
-    --bg-external: var(--rp-moon-base);
+    --bg-inversed: var(--rp-dawn-overlay); /*linear-gradient(to bottom, var(--rp-moon-base) 0%, var(--rp-moon-muted) 100%);*/
+    --bg-external: var(--rp-surface);
     --text-content: var(--rp-dawn-text);
-    --text-inversed: var(--rp-text);
+    --text-inversed: var(--rp-dawn-text);
     --white-color: var(--rp-dawn-base);
     --black-color: var(--rp-moon-base);
     --red-color: var(--rp-dawn-love);
