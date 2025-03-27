@@ -1,401 +1,122 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>{{ top_title }}</title>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-    <style>
-    body {
-      background-color: #fff;
-      padding:50px;
-      font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      color:#595959;
-      font-weight:400;
-    }
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="UTF-8">
+  <title>{{ top_title }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="author" content="{{ author }}">
 
-    h1, h2, h3, h4, h5, h6 {
-      color:#222;
-      margin:0 0 20px;
-    }
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    p, ul, ol, table, pre, dl {
-      margin:0 0 20px;
-    }
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="css/css.css" rel="stylesheet" type="text/css">
 
-    h1, h2, h3 {
-      line-height:1.1;
-    }
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <!--<link rel="stylesheet" href="css/typicons/typicons.min.css">-->
+  <!--<link rel="stylesheet" href="css/fontawesome/css/fontawesome.min.css">
+  <link rel="stylesheet" href="css/fontawesome/css/brands.min.css">
+  <link rel="stylesheet" href="css/fontawesome/css/solid.min.css">-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typicons.font@2.0.9/src/font/typicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/brands.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/solid.min.css">
 
-    h1 {
-      font-size:28px;
-      font-weight: 500;
-    }
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/javascript" async="" src="js/ga.js"></script><script id="twitter-wjs" src="js/widgets.js"></script><script src="js/jquery.js"></script>
+  <script src="js/run_prettify.html"></script>
+  <link rel="stylesheet" href="css/github-prettify-theme.css">
+  <script src="js/site.js"></script>
 
-    h2 {
-      color:#393939;
-      font-weight: 500;
-    }
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="http://getskeleton.com/dist/images/favicon.png">
 
-    h3, h4, h5, h6 {
-      color:#494949;
-      font-weight: 500;
-    }
+<script charset="utf-8" src="js/button.js"></script></head>
+<body class="code-snippets-visible">
 
-    a {
-      color:#39c;
-      text-decoration:none;
-    }
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="header">
+      <h1 class="title"> {{ project_name }} </h1>
+      {% if not( smart_title is none) %}<h2 class="title"> {{ smart_title }} </h2>{% endif %}
+      {% if not( project_url is none) %}
+      <a class="button button-primary" href="{{ project_url }}" style="background-color:{{ concept_color }};" > {{ project_url_title }} </a>
+      {% endif %}
+      {% if not (three_concepts is none) %}
+      <div class="value-props row">
+		{% for i in range(three_concepts|length) %}
+        <div class="{{ concept_width }} columns value-prop">
+		  <h1 style="color:{{ concept_color }};">{{ three_concepts[i] }}</h1>
+          {% if not (three_desc is none) %}{{ three_desc[i] }}{% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </section>
 
-    a:hover {
-      color:#069;
-    }
+	{% if menus|length>0 %}
+    <div class="navbar-spacer"></div>
+    <nav class="navbar">
+      <div class="container">
+        <ul class="navbar-list">
+          <!--<li class="navbar-item"><a class="navbar-link" href="#"><large>{{ project_name }}</large></a></li>-->
+		  {% for menu in menus %}
+          <li class="navbar-item">
+            <a class="navbar-link" href="#" data-popover="#codeNavPopover{{ menu[0][0] }}">{{ menu[0][1] }}</a>
+            <div id="codeNavPopover{{ menu[0][0] }}" class="popover">
+              <ul class="popover-list">
+                <li class="popover-item">
+                  <a class="popover-link" href="#{{ menu[0][0] }}">{{ menu[0][1] }}</a>
+                </li>
+                {% for ide, ite in menu[1] %}
+                <li class="popover-item">
+                  <a class="popover-link" href="#{{ ide }}">{{ ite }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+    {% endif %}
 
-    a small {
-      font-size:11px;
-      color:#777;
-      margin-top:-0.3em;
-      display:block;
-    }
-
-    a:hover small {
-      color:#777;
-    }
-
-    .wrapper {
-      width:860px;
-      margin:0 auto;
-    }
-
-    blockquote {
-      border-left:1px solid #e5e5e5;
-      margin:0;
-      padding:0 0 0 20px;
-      font-style:italic;
-    }
-
-    code, pre {
-      font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
-      color:#333;
-    }
-
-    pre {
-      padding:8px 15px;
-      background: #f8f8f8;
-      border-radius:5px;
-      border:1px solid #e5e5e5;
-      overflow-x: auto;
-    }
-
-    table {
-      width:100%;
-      border-collapse:collapse;
-    }
-
-    th, td {
-      text-align:left;
-      padding:5px 10px;
-      border-bottom:1px solid #e5e5e5;
-    }
-
-    dt {
-      color:#444;
-      font-weight:500;
-    }
-
-    th {
-      color:#444;
-    }
-
-    img {
-      max-width:100%;
-    }
-
-    header {
-      width:270px;
-      float:left;
-      position:fixed;
-      -webkit-font-smoothing:subpixel-antialiased;
-    }
-
-    header ul {
-      list-style:none;
-      height:40px;
-      padding:0;
-      background: #f4f4f4;
-      border-radius:5px;
-      border:1px solid #e0e0e0;
-      width:270px;
-    }
-
-    header li {
-      width:89px;
-      float:left;
-      border-right:1px solid #e0e0e0;
-      height:40px;
-    }
-
-    header li:first-child a {
-      border-radius:5px 0 0 5px;
-    }
-
-    header li:last-child a {
-      border-radius:0 5px 5px 0;
-    }
-
-    header ul a {
-      line-height:1;
-      font-size:11px;
-      color:#999;
-      display:block;
-      text-align:center;
-      padding-top:6px;
-      height:34px;
-    }
-
-    header ul a:hover {
-      color:#999;
-    }
-
-    header ul a:active {
-      background-color:#f0f0f0;
-    }
-
-    strong {
-      color:#222;
-      font-weight:500;
-    }
-
-    header ul li + li + li {
-      border-right:none;
-      width:89px;
-    }
-
-    header ul a strong {
-      font-size:14px;
-      display:block;
-      color:#222;
-    }
-
-    section {
-      width:500px;
-      float:right;
-      padding-bottom:50px;
-    }
-
-    small {
-      font-size:11px;
-    }
-
-    hr {
-      border:0;
-      background:#e5e5e5;
-      height:1px;
-      margin:0 0 20px;
-    }
-
-    footer {
-      width:270px;
-      float:left;
-      position:fixed;
-      bottom:50px;
-      -webkit-font-smoothing:subpixel-antialiased;
-    }
-
-    @media print, screen and (max-width: 960px) {
-
-      div.wrapper {
-        width:auto;
-        margin:0;
-      }
-
-      header, section, footer {
-        float:none;
-        position:static;
-        width:auto;
-      }
-
-      header {
-        padding-right:320px;
-      }
-
-      section {
-        border:1px solid #e5e5e5;
-        border-width:1px 0;
-        padding:20px 0;
-        margin:0 0 20px;
-      }
-
-      header a small {
-        display:inline;
-      }
-
-      header ul {
-        position:absolute;
-        right:50px;
-        top:52px;
-      }
-    }
-
-    @media print, screen and (max-width: 720px) {
-      body {
-        word-wrap:break-word;
-      }
-
-      header {
-        padding:0;
-      }
-
-      header ul, header p.view {
-        position:static;
-      }
-
-      pre, code {
-        word-wrap:normal;
-      }
-    }
-
-    @media print, screen and (max-width: 480px) {
-      body {
-        padding:15px;
-      }
-
-      header ul {
-        width:99%;
-      }
-
-      header li, header ul li + li + li {
-        width:33%;
-      }
-    }
-
-    @media print {
-      body {
-        padding:0.4in;
-        font-size:12pt;
-        color:#444;
-      }
-    }
-
-    .highlight  { background: #ffffff; }
-    .highlight .c { color: #999988; font-style: italic } /* Comment */
-    .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
-    .highlight .k { font-weight: bold } /* Keyword */
-    .highlight .o { font-weight: bold } /* Operator */
-    .highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
-    .highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
-    .highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
-    .highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
-    .highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
-    .highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
-    .highlight .ge { font-style: italic } /* Generic.Emph */
-    .highlight .gr { color: #aa0000 } /* Generic.Error */
-    .highlight .gh { color: #999999 } /* Generic.Heading */
-    .highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
-    .highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
-    .highlight .go { color: #888888 } /* Generic.Output */
-    .highlight .gp { color: #555555 } /* Generic.Prompt */
-    .highlight .gs { font-weight: bold } /* Generic.Strong */
-    .highlight .gu { color: #800080; font-weight: bold; } /* Generic.Subheading */
-    .highlight .gt { color: #aa0000 } /* Generic.Traceback */
-    .highlight .kc { font-weight: bold } /* Keyword.Constant */
-    .highlight .kd { font-weight: bold } /* Keyword.Declaration */
-    .highlight .kn { font-weight: bold } /* Keyword.Namespace */
-    .highlight .kp { font-weight: bold } /* Keyword.Pseudo */
-    .highlight .kr { font-weight: bold } /* Keyword.Reserved */
-    .highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
-    .highlight .m { color: #009999 } /* Literal.Number */
-    .highlight .s { color: #d14 } /* Literal.String */
-    .highlight .na { color: #008080 } /* Name.Attribute */
-    .highlight .nb { color: #0086B3 } /* Name.Builtin */
-    .highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
-    .highlight .no { color: #008080 } /* Name.Constant */
-    .highlight .ni { color: #800080 } /* Name.Entity */
-    .highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
-    .highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
-    .highlight .nn { color: #555555 } /* Name.Namespace */
-    .highlight .nt { color: #000080 } /* Name.Tag */
-    .highlight .nv { color: #008080 } /* Name.Variable */
-    .highlight .ow { font-weight: bold } /* Operator.Word */
-    .highlight .w { color: #bbbbbb } /* Text.Whitespace */
-    .highlight .mf { color: #009999 } /* Literal.Number.Float */
-    .highlight .mh { color: #009999 } /* Literal.Number.Hex */
-    .highlight .mi { color: #009999 } /* Literal.Number.Integer */
-    .highlight .mo { color: #009999 } /* Literal.Number.Oct */
-    .highlight .sb { color: #d14 } /* Literal.String.Backtick */
-    .highlight .sc { color: #d14 } /* Literal.String.Char */
-    .highlight .sd { color: #d14 } /* Literal.String.Doc */
-    .highlight .s2 { color: #d14 } /* Literal.String.Double */
-    .highlight .se { color: #d14 } /* Literal.String.Escape */
-    .highlight .sh { color: #d14 } /* Literal.String.Heredoc */
-    .highlight .si { color: #d14 } /* Literal.String.Interpol */
-    .highlight .sx { color: #d14 } /* Literal.String.Other */
-    .highlight .sr { color: #009926 } /* Literal.String.Regex */
-    .highlight .s1 { color: #d14 } /* Literal.String.Single */
-    .highlight .ss { color: #990073 } /* Literal.String.Symbol */
-    .highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
-    .highlight .vc { color: #008080 } /* Name.Variable.Class */
-    .highlight .vg { color: #008080 } /* Name.Variable.Global */
-    .highlight .vi { color: #008080 } /* Name.Variable.Instance */
-    .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
-
-    .type-csharp .highlight .k { color: #0000FF }
-    .type-csharp .highlight .kt { color: #0000FF }
-    .type-csharp .highlight .nf { color: #000000; font-weight: normal }
-    .type-csharp .highlight .nc { color: #2B91AF }
-    .type-csharp .highlight .nn { color: #000000 }
-    .type-csharp .highlight .s { color: #A31515 }
-    .type-csharp .highlight .sc { color: #A31515 }
-    </style>
-    <!-- <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/pygment_trac.css"> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typicons.font@2.0.9/src/font/typicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/fontawesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/brands.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/solid.min.css">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>{{ project_name }}</h1>
-        <p>{% if not( smart_title is none) %}<h2 class="title"> {{ smart_title }} </h2>{% endif %}</p>
-        {% if not( project_url is none) %}
-        <p class="view"><a href="{{ project_url }}">{{ project_url_title }} <small>{{ author }}/{{ project_name }}</small></a></p>
-        {% endif %}
-      </header>
-      <section>
-		  
-		{{ content }}
-		  
-      </section>
-      <footer>
-        <p> {{ author }} is working with a lot of passion on <a href="{{ project_url }}">{{ project_name }}</a>.</p>
-        <p><small>Built with <a href="https://wcchin.github.io/carlae/">Carlae</a>. Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+    <!-- main text area -->
+    <div class="docs-section" id="intro">
+	  {{ content }}
     </div>
-    <!-- <script src="js/scale.fix.js"></script> -->
-    <script>
-      var metas = document.getElementsByTagName('meta');
-      var i;
-      if (navigator.userAgent.match(/iPhone/i)) {
-        for (i=0; i<metas.length; i++) {
-          if (metas[i].name == "viewport") {
-            metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
-          }
-        }
-        document.addEventListener("gesturestart", gestureStart, false);
-      }
-      function gestureStart() {
-        for (i=0; i<metas.length; i++) {
-          if (metas[i].name == "viewport") {
-            metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
-          }
-        }
-      }
-    </script>
-  </body>
-</html>
+  </div>
+
+  {% if google_analytics is not none %}
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', {{ google_analytics }}]);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  {% endif %}
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body></html>
