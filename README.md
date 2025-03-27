@@ -38,16 +38,32 @@ a file name `a_file.slides.html` will be generated, open it with a browser.
     ---
     
     second page
-    
-    
+
+
+​    
 ## Available themes
+### Demo
 - Catppuccin: [Latte](testing/demo_0-Catppuccin_latte.slides.html) | [Mocha](testing/demo_1-Catppuccin_mocha.slides.html)
 - Rose Pine: [Dawn](testing/demo_2-RosePine-dawn.slides.html) | [Moon](testing/demo_3-RosePine-moon.slides.html)
 - Nord: [Polar](testing/demo_4-Nord-polar.slides.html) | [Storm](testing/demo_5-Nord-storm.slides.html)
 - Evergreen: [Day](testing/demo_6-Everforest-day.slides.html) | [Night](testing/demo_7-Everforest-night.slides.html)
 
+### Screenshot
 
-    
+| Theme      | Style              | Title page                                                   | Content page                                                 |
+| ---------- | ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Catppuccin | Mocha <br />(dark) | [![Catppuccin - Mocha - title](theme_demo/demo-Catppuccin-Mocha-title.tb.png)](theme_demo/demo-Catppuccin-Mocha-title.png) | [![Catppuccin - Mocha - content](theme_demo/demo-Catppuccin-Mocha-content.tb.png)](theme_demo/demo-Catppuccin-Mocha-content.png) |
+| Catppuccin | Latte <br />(light) | [![Catppuccin - Latte - title](theme_demo/demo-Catppuccin-Latte-title.tb.png)](theme_demo/demo-Catppuccin-Latte-title.png) | [![Catppuccin - Latte - content](theme_demo/demo-Catppuccin-Latte-content.tb.png)](theme_demo/demo-Catppuccin-Latte-content.png) |
+| Rosepine | Moon<br />(dark) | [![Rosepine - Moon - title](theme_demo/demo-Rosepine-Moon-title.tb.png)](theme_demo/demo-Rosepine-Moon-title.png) | [![Rosepine - Moon - content](theme_demo/demo-Rosepine-Moon-content.tb.png)](theme_demo/demo-Rosepine-Moon-content.png) |
+| Rosepine | Dawn<br />(light) | [![Rosepine - Dawn - title](theme_demo/demo-Rosepine-Dawn-title.tb.png)](theme_demo/demo-Rosepine-Dawn-title.png) | [![Rosepine - Dawn - content](theme_demo/demo-Rosepine-Dawn-content.tb.png)](theme_demo/demo-Rosepine-Dawn-content.png) |
+| Everforest | Night<br />(dark) | [![Everforest - Night - title](theme_demo/demo-Everforest-Night-title.tb.png)](theme_demo/demo-Everforest-Night-title.png) | [![Everforest - Night - content](theme_demo/demo-Everforest-Night-content.tb.png)](theme_demo/demo-Everforest-Night-content.png) |
+| Everforest | Day<br />(light) | [![Everforest - Day - title](theme_demo/demo-Everforest-Day-title.tb.png)](theme_demo/demo-Everforest-Day-title.png) | [![Everforest - Day - content](theme_demo/demo-Everforest-Day-content.tb.png)](theme_demo/demo-Everforest-Day-content.png) |
+| Nord | Polar<br />(dark) | [![Nord - Polar - title](theme_demo/demo-Nord-Polar-title.tb.png)](theme_demo/demo-Nord-Polar-title.png) | [![Nord - Polar - content](theme_demo/demo-Nord-Polar-content.tb.png)](theme_demo/demo-Nord-Polar-content.png) |
+| Nord | Storm<br />(light) | [![Nord - Storm - title](theme_demo/demo-Nord-Storm-title.tb.png)](theme_demo/demo-Nord-Storm-title.png) | [![Nord - Storm - content](theme_demo/demo-Nord-Storm-content.tb.png)](theme_demo/demo-Nord-Storm-content.png) | Nord | Storm<br />(light) | [![Nord - Storm - title](theme_demo/demo-Nord-Storm-title.tb.png)](theme_demo/demo-Nord-Storm-title.png) | [![Nord - Storm - content](theme_demo/demo-Nord-Storm-content.tb.png)](theme_demo/demo-Nord-Storm-content.png) | 
+
+
+
+
 ## Added more themes (2025-03-26)
 - make the Catppuccin theme to be generic, and added one dark theme based on Catppuccin
 - added Rose Pine, Nord, and Everforest series themes
