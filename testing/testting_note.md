@@ -1,5 +1,5 @@
 slide_title: Note 2022-06-16
-custom_css: remarkjs/Catppuccin.css
+custom_css: remarkjs/Nord-storm-zh.css
 aspect_ratio: 16:9
 remarkjs_path: remarkjs/remark-0.15.0.js
 mathjaxjs_path: remarkjs/mathjax-svg.js
@@ -27,9 +27,29 @@ To capture IO in one trend line  $F=x^2$.
 ---
 layout: false
 
+# 人權宣言
+## 初级教育应属义务性质
+
+㈠ 人人都有受教育的权利，教育应当免费，至少在初级和基本阶段应如此。初级教育应属义务性质。技术和职业教育应普遍设立。高等教育应根据成绩而对一切人平等开放。
+
+.round[㈡ 教育的目的在于充分发展人的个性并加强对人权和基本自由的尊重。教育应促进各国、各种族或各宗教集团间的了解、容忍和友谊，并应促进联合国维护和平的各项活动。]
+
+.xkcd[㈢ 父母对其子女所应受的教育的种类，有优先選擇的权利。]
+
+---
+
 $$
 F = mc^2
 $$
+
+---
+
+### Lorem Ipsum
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices hendrerit feugiat. Morbi et nulla erat. Fusce accumsan risus velit, nec maximus odio semper a. Fusce tellus mauris, semper sit amet lacus ac, laoreet malesuada dui. Nulla dui neque, accumsan quis tempus a, bibendum sit amet orci. Proin sagittis ex turpis, sit amet ornare lectus ullamcorper a. Aliquam erat volutpat.
+
+Sed et nibh turpis. In hac habitasse platea dictumst. Proin nec fermentum neque, gravida tempor urna. Vestibulum tempus est sit amet tellus fringilla, sit amet varius lectus accumsan. Donec in maximus risus. Fusce quis odio nec velit scelerisque ornare rutrum auctor lorem. Maecenas enim ante, maximus at augue eu, rutrum tincidunt purus. Nunc ornare, sapien sit amet pretium commodo, lectus lacus tempor dolor, commodo aliquet eros enim sed nisi. Ut vel elementum libero, eget hendrerit diam. Nulla mattis et nibh id luctus. Integer hendrerit eros in tincidunt laoreet. Donec egestas urna eget risus rhoncus tristique. Ut laoreet est odio, vel dignissim purus molestie in. Nulla id lacinia turpis. Etiam semper aliquet tellus ut tincidunt. Pellentesque non odio eu diam consequat malesuada egestas ac arcu.
+
+Vestibulum in mi sapien. In ornare bibendum dignissim. Morbi auctor fermentum est porta cursus. Praesent eu tellus sollicitudin, dapibus massa a, scelerisque diam. Pellentesque accumsan in odio in egestas. Duis et pretium lorem. Mauris malesuada augue eros, a luctus nulla scelerisque nec. Donec vel diam eget leo rhoncus condimentum eget non mauris.
 
 ---
 
