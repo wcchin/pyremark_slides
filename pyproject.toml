@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyremark_slides"
+version = "0.1.1"
+dependencies = [
+  "jinja2",
+  "watchdog",
+]
+requires-python = ">=3.8"
+authors = [
+  {name = "Benny Chin", email = "wcchin.88@gmail.com"},
+]
+maintainers = [
+  {name = "Benny Chin", email = "wcchin.88@gmail.com"},
+]
+description = "a python package that convert markdown to remark.js slides, a sister project of pyreveal."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["remark.js", "markdown", "slides", "presentation"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Topic :: Scientific/Engineering :: Visualization",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "Intended Audience :: Education"
+]
+
+[project.urls]
+Homepage = "https://wcchin.github.io/pyremark_slides/"
+Documentation = "https://wcchin.github.io/pyremark_slides/"
+Repository = "https://github.com/wcchin/pyremark_slides"
+"Bug Tracker" = "https://github.com/wcchin/pyremark_slides/issues"
+Changelog = "https://github.com/wcchin/pyremark_slides/blob/master/CHANGELOG.md"
+
+[project.scripts]
+pyremark = "pyremark.pyremark:main"
