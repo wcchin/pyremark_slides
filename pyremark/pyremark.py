@@ -239,6 +239,12 @@ class slides():
             config['use_scroll'] = 'false'
         elif config['use_scroll'] not in ['true', 'false']:
             config['use_scroll'] = 'false'
+            
+        if 'highlight_style' not in config:
+            config['highlightStyle'] = 'default'
+        else: 
+            config['highlightStyle'] = config['highlight_style']
+            del config['highlight_style']
 
         if 'use_mathjax' in config:
             if config['use_mathjax']=='true':
